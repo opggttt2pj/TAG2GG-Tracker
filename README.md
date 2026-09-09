@@ -108,7 +108,6 @@ C:\1\
 개발자가 EXE를 다시 만들 때는 `ttt2_tracker/BUILD_EXE.md`의 PyInstaller
 절차를 따릅니다. 릴리스 태그는 `vMAJOR.MINOR.PATCH` 형식을 사용하며,
 Launcher의 현재 버전보다 높은 정식 Release가 있으면 실행을 차단합니다.
-Draft Release는 `/releases/latest` 조회 대상이 아닙니다.
 
 웹사이트는 `ttt2_web` 폴더를 정적 사이트로 배포합니다. 데이터베이스 변경이나
 새 집계 항목을 추가할 때는 Tracker가 저장하는 필드, Supabase 정책, 프론트엔드
