@@ -57,7 +57,7 @@ Tracker가 `matches`에 저장하는 핵심 필드는 다음과 같습니다.
 
 | 필드 | 설명 |
 | --- | --- |
-| `p1_name`, `p2_name` | P1/1P 및 P2/2P 닉네임 |
+| `p1_name`, `p2_name` | P1, P2 닉네임 |
 | `p1_score`, `p2_score` | 최종 라운드 승수 |
 | `winner` | 승자 닉네임 |
 | `p1_main_character_id`, `p1_sub_character_id` | P1 메인·서브 캐릭터 ID |
