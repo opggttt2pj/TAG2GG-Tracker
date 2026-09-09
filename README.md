@@ -36,7 +36,7 @@ Tracker는 게임 화면을 OCR하거나 패킷을 분석하지 않습니다. RP
 2. 인터넷 또는 GitHub 확인에 실패하거나 설치 버전이 오래된 경우 Tracker를
    시작하지 않고 안내합니다.
 3. Tracker가 `rpcs3.exe` 프로세스를 찾고 읽기 권한으로 연결합니다.
-4. RPCS3 메모리에서 P1/P2 닉네임, 대전 상태, 점수, 주·부 캐릭터 ID를 약
+4. RPCS3 메모리에서 P1/P2 닉네임, 대전 상태, 점수, 메인·서브 캐릭터 ID를 약
    0.3초 간격으로 읽습니다.
 5. 유효한 대전 상태가 약 2초 이상 유지되어야 실제 대전으로 확정합니다.
    메뉴나 캐릭터 선택 화면의 잔여 값을 경기로 잘못 기록하지 않기 위한
@@ -60,8 +60,8 @@ Tracker가 `matches`에 저장하는 핵심 필드는 다음과 같습니다.
 | `p1_name`, `p2_name` | P1/1P 및 P2/2P 닉네임 |
 | `p1_score`, `p2_score` | 최종 라운드 승수 |
 | `winner` | 승자 닉네임 |
-| `p1_main_character_id`, `p1_sub_character_id` | P1 주·부 캐릭터 ID |
-| `p2_main_character_id`, `p2_sub_character_id` | P2 주·부 캐릭터 ID |
+| `p1_main_character_id`, `p1_sub_character_id` | P1 메인·서브 캐릭터 ID |
+| `p2_main_character_id`, `p2_sub_character_id` | P2 메인·서브 캐릭터 ID |
 | `start_time`, `end_time` | UTC 기준 대전 시작·종료 시각 |
 | `created_at` | Supabase가 관리하는 생성 시각 |
 
@@ -75,10 +75,9 @@ Tracker가 `matches`에 저장하는 핵심 필드는 다음과 같습니다.
 동작하는 정적 프론트엔드입니다.
 
 - Supabase REST API에서 최근 경기 데이터를 조회합니다.
-- 대시보드는 최대 1,000건을 받아 화면에서 집계합니다.
 - TOP 10은 총 20전 이상 플레이어만 대상으로 승률순으로 계산합니다.
 - 프로필은 닉네임 조건으로 경기 행을 조회해 전적과 조합을 계산합니다.
-- HTML/CSS/JavaScript와 캐릭터 WebP 자산으로 데스크톱·모바일 UI를 렌더링합니다.
+- HTML/CSS/JavaScript와 캐릭터 WebP 이미지로 데스크톱·모바일 UI를 렌더링합니다.
 - `manifest.json`과 서비스 워커를 사용해 PWA 설치를 지원합니다.
 - Netlify 같은 정적 호스팅에서 별도 백엔드 없이 배포할 수 있습니다.
 
@@ -91,10 +90,10 @@ C:\1\
 │  ├─ tracker.py              # RPCS3 메모리 감시와 경기 업로드
 │  ├─ gui_launcher.py         # GUI, 버전 확인, Tracker 실행
 │  ├─ TTT2TrackerGUI.spec     # PyInstaller 패키징 설정
-│  └─ BUILD_EXE.md            # 빌드·릴리스 절차
+│  └─ BUILD_EXE.md            # 빌드·릴리스 절차 가이드 문서
 └─ ttt2_web\
    ├─ index.html               # 통계 계산과 화면 렌더링
-   ├─ css/main.css             # 반응형 스타일
+   ├─ css/main.css             # 반응형 스타일(RWD)
    ├─ assets/characters/       # 캐릭터 이미지
    ├─ manifest.json            # PWA 메타데이터
    └─ sw.js                    # 서비스 워커
