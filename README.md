@@ -32,6 +32,10 @@ Tekken Tag Tournament 2 온라인 대전 기록 추적 프로그램입니다.
 - 인터넷 연결 또는 GitHub 확인에 실패하면 실행되지 않습니다.
 - 최신 버전이 배포되면 구버전은 실행되지 않습니다.
 
+## 다운로드
+
+최신 버전은 [Releases](../../releases/latest)에서 다운로드할 수 있습니다.
+
 ## 제작자
 
 Developed by legbreaker  
